@@ -13,5 +13,5 @@ app.set('view engine','ejs');
 app.use('/employee',emprouter);
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html');
+    res.sendFile('app.html');
 });
