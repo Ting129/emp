@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改資料成功頁面</title>
+</head>
+<body>
+    <h2>一筆資料已修改成功</h2>
+    <h2>資料如下:</h2>
+    
+    <% emp = emps[0]; %>
+    <table border ='1'>
+                        <tr><td>員工編號</td><td><%= emp.empno %></td></tr>
+                        <tr><td>姓名</td><td><%= emp.ename %></td></tr>
+                        <tr><td>到期日</td><td><%= emp.hiredate.substring(0,10) %></td></tr>
+                        <tr><td>薪資</td><td><%= emp.salary %></td></tr>
+                        <tr><td>部門代號</td><td><%= emp.deptno %></td></tr>
+                        <tr><td>職稱</td><td><%= emp.title %></td></tr>
+
+
+    </table>
+    
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改資料頁面</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    
+    <style>
+        fieldset {
+            width: 500px;
+            border: 1px solid #acd6ff;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+        legend {
+            color: #006c6c;
+            /* text-align: center; */
+            margin-left: 200px;
+        }
+        .st1 {
+            width: 450px;
+            /* border-bottom: 3px dashed gray; */
+            margin: 20px;
+            padding-bottom: 10px;
+        }
+
+        .sub {
+            width: 450px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .t1 {
+            width: 200px;
+            float: left;
+            /* border: 1px solid red; */
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <% emp = emps[0]; %>
+    <h2>員工編號<%= emp.empno %> </h2>
+    <h2>資料如下:</h2>
+
+    <fieldset>
+        <legend><h2>修改員工資料</h2></legend>
+        <div class="st1">
+        <form method="post" action="http://localhost:8181/employee/update1">
+        <label class="t1">員工編號 empno:</label><input type="text" name="empno" value="<%= emp.empno %>"><p>  
+        <label class="t1">姓名 ename:</label><input type="text" name="ename" value="<%= emp.ename %>"><p>  
+        <label class="t1">到期日 hiredate:</label><input type="date" name="hiredate" value="<%= emp.hiredate.substring(0,10) %>"><p>  
+        <label class="t1">薪資 salary:</label><input type="text" name="salary" value="<%= emp.salary %>"><p>  
+            <label for="" class="t1">部門代號 deptno:</label>
+            <select name="deptno" id="deptno" >
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+                <script>
+                   var someValue = "<%= emp.deptno %>";
+                    $('#deptno option[value='+ someValue +']').attr('selected', true); 
+                </script>
+            </select><p>  
+                <label for="" class="t1">職稱 title:</label>
+                <select name="title" id="title">
+                    <option value="engineer">engineer</option>
+                    <option value="senior engineer">senior engineer</option>
+                    <option value="SA_REP">SA_REP</option>  
+                <script>
+                    var someValue = "<%= emp.title %>";
+                     $('#title option[value='+ someValue +']').attr('selected', true); 
+                 </script>                
+            </select><p>    
+
+        </div>
+        <div class="sub">
+        <input type="submit" value="送出修改" >
+        <input type="reset" value="清除" >
+        </div>
+        </form>
+        </fieldset>
+
+</body>
+</html>

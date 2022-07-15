@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>員工資料</title>
+</head>
+<body>
+    <h2>員工資料</h2>
+    <table border ='1'>
+        <tr>
+            <th>員工編號<th>姓名<th>到期日<th>薪資<th>部門代號<th>職稱</tr>
+            <% for(let i=0; i < emps.length; i++) {%>
+                    <tr>
+                        <td><%= emps[i].empno %></td>
+                        <td><%= emps[i].ename %></td>
+                        <td><%= emps[i].hiredate.substring(0,10) %></td>
+                        <td><%= emps[i].salary %></td>
+                        <td><%= emps[i].deptno %></td>
+                        <td><%= emps[i].title %></td>
+                    </tr>
+            <% } %>
+    </table>
+    
+</body>
+</html>
