@@ -53,10 +53,11 @@ exports.queryadd = (req,res) => {
 exports.querydel = (req,res) => {
     empmodel.querydel(req.query.empno).then((data) => {
     data = JSON.parse(data);
+    res.send('已刪除此資料')
         // res.render('./emp/querydel',{emps:data});
-//         }).catch((err) => {
+        }).catch((err) => {
 //         console.log("Erroe: " + err);
-//         res.send('查無此資料');
+        res.send('查無此資料');
         });     
 };
 
