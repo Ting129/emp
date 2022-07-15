@@ -11,3 +11,7 @@ app.listen(PORT, console.log(
 var emprouter = require('./router/emprouter');
 app.set('view engine','ejs');
 app.use('/employee',emprouter);
+
+app.get('/', (req, res) => {
+    res.sendFile('index.html');
+});
