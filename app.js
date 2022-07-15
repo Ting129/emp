@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-let fs = require('fs');
+const http = require('http');
+// const fs = require('fs');
 // app.listen(8181);
 
 // Establishing the port
@@ -13,6 +14,7 @@ var emprouter = require('./router/emprouter');
 app.set('view engine','ejs');
 app.use('/employee',emprouter);
 
-app.get('/index.html', (req, res) => {
-    fs.res.sendFile('./index.html');
-});
+// app.get('/', (req, res) => {
+//     fs.res.sendFile('./index.html');
+// });
+
