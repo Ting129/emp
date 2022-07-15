@@ -1,14 +1,14 @@
 var express = require('express');
 var mysql = require('mysql');
 var conn = mysql.createConnection({
-    host:'localhost',
-    user:'nodejs',
-    password:'Passw0rd0000',
-    database:'db01'
+    host:'us-cdbr-east-06.cleardb.net',
+    user:'b6cb1d44dee95a',
+    password:'6d956c57',
+    database:'heroku_12bcf914abfa859'
 });
 
 
-//http://localhost:8181/employee/queryall
+//https://emptop80276.herokuapp.com/employee/queryall
 exports.queryall = () => {
     let promise = new Promise((resolve,reject) => {
     var sql = 'SELECT * FROM employee';
